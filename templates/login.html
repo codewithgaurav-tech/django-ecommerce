@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/login.css' %}">
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="{% static '/login.css' %}"> -->
+</head>
+<body>
+    
+
+    <form method="post" action="/accounts/logeed_in">
+        {% csrf_token %}
+        <input type="text" id="login" class="fadeIn second" name="username" placeholder="username">
+        <input type="password" id="password1" class="fadeIn third" name="password1" placeholder="password1">
+        <input type="submit" class="fadeIn fourth" value="Log In">
+      </form>
+</body>
+</html>
