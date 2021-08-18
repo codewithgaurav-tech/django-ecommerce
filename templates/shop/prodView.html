@@ -1,3 +1,26 @@
 {% extends 'shop/base.html' %}
-{% block title  %} product view {% endblock %}
-{% block body %} This is our product view page {% endblock body %}
+{% for i in params  %}products
+{% block title %} {{i.product_name}}{% endblock %}
+{% endfor %}
+{% block body %}
+
+<div class="container my-4">
+    <div class="row">
+    <div class="col-md-4">
+    <div class="row">
+    {% for j in params%}
+       <img src='/media/{{j.image}}'width="233px" height="385px">
+      {% endfor %} 
+    </div>
+    
+        </div>
+    <div class="col-md-8">
+    {% for j in params%}
+        <h5>{{j.product_name}}</h5>
+        <p>{{j.desc}}</p>
+        {% endfor %}
+    </div>
+        </div>
+</div>
+
+{% endblock %}

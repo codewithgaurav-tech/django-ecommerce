@@ -8,7 +8,7 @@ from django.utils import timezone
 # insert into table using orm
 myprod=Product(product_name="mouse", category="computer", subcategory="devices",price=200,desc="this is mouse",pub_date=timezone.now())
 myprod.save()
-# how to get signel product from table
+# how to get single product from table
 a=Product.objects.get(product_name="mouse")
 a.category
 
