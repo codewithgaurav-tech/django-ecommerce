@@ -1,7 +1,21 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User,auth
+from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse
 # Create your views here.
+@csrf_exempt
+def testMe(request):
+    pickup_records = []
+    pickup_records.append({
+            "id": 1,
+            "name": "Naveen"
+    });
+    pickup_records.append({
+            "id": 2,
+            "name": "Gaurav"
+    });
+    return JsonResponse(pickup_records, safe=False)
 def register(request):
 
     name = request.POST['First_name']
